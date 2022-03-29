@@ -6,17 +6,19 @@ import java.sql.Timestamp;
 import org.springframework.context.ApplicationEvent;
 
 public class WithdrawalEvent extends ApplicationEvent {
-	double balance;
+	BankAccount acc;
+	double amount;
 	
-	public WithdrawalEvent(Object source, double balance) {
+	public WithdrawalEvent(Object source, BankAccount acc,double amount) {
 		super(source);
-		this.balance = balance;
+		this.acc = acc;
+		this.amount=amount;
 	}
 	
 
 	public String toString() {
-		return " Acc Balance =" + this.balance
-				+ "\n"+"Timestamp: "+new Timestamp(System.currentTimeMillis());
+		return "Amount withdrawn: "+this.amount+" Acc Balance =" + acc.getAccBalance()
+				+ " Timestamp: "+new Timestamp(System.currentTimeMillis());
 	}	
 	
 		

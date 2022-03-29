@@ -10,14 +10,15 @@ public class MainApp {
 	   	WithdrawalEventPublisher publisher = (WithdrawalEventPublisher) context.getBean("withdrawalEventPublisher");
 	   	
 	   	SalaryAccount salaryAcc = (SalaryAccount) context.getBean("salaryAccount");
-	      double balance1=salaryAcc.withdraw(10000);
-	      publisher.publish(balance1);
-	      salaryAcc.deposit(20000);
+	      double amount1=salaryAcc.withdraw(30000);
+	     
+	      publisher.publish(salaryAcc,amount1);
+	      
 	      
 	      SavingsAccount savingsAcc = (SavingsAccount) context.getBean("savingsAccount");
-	      savingsAcc.deposit(20000);
-	      double balance2=savingsAcc.withdraw(8000);
-	   	publisher.publish(balance2);
+	      
+	      double amount2=savingsAcc.withdraw(8000);
+	   	publisher.publish(savingsAcc,amount2);
 	      
 	    
 	      

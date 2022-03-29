@@ -17,12 +17,9 @@ public class MyFileReader {public static void main(String args[]) {
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		DocumentBuilder db = dbf.newDocumentBuilder();
 		Document document = db.parse(file);
-		document.getDocumentElement().normalize();
-		NodeList nodeList = document.getElementsByTagName("name");
-		Element element = (Element) nodeList.item(0);
 		MyBean bean = MyBean.getInstance();
-		bean.setFirstname(element.getElementsByTagName("first_name").item(0).getTextContent());
-		bean.setLastname(element.getElementsByTagName("last_name").item(0).getTextContent());
+		bean.setFirstname(document.getElementsByTagName("first_name").item(0).getTextContent());
+		bean.setLastname(document.getElementsByTagName("last_name").item(0).getTextContent());
 		System.out.println(bean);
 	} catch (Exception e) {
 		System.out.println(e.getMessage());

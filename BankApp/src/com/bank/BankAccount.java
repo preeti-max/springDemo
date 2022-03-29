@@ -49,12 +49,12 @@ class SavingsAccount extends BankAccount{
 	public double withdraw(double amount) {
 		if(amount>this.getAccBalance() || amount>30000) {
 			System.out.println("Withdrawl not possible");
-			return getAccBalance();
+			return 0;
 			
 			
 		}
 		this.setAccBalance(this.getAccBalance()-amount);
-		return getAccBalance(); 
+		return amount; 
 		
 
 		
@@ -62,10 +62,10 @@ class SavingsAccount extends BankAccount{
 	public double deposit(double amount) {
 		if(amount>1000000) {
 			System.out.println("Deposit limit exceeded");
-			return getAccBalance();
+			return 0;
 		}
 		this.setAccBalance(this.getAccBalance()+amount);
-		return getAccBalance(); 
+		return amount; 
 		
 		
 		
@@ -81,16 +81,16 @@ class SalaryAccount extends BankAccount{
 	public double withdraw(double amount) {
 		if(amount>this.getAccBalance() || amount>100000 ) {
 			System.out.println("Withdrawl not possible");
-			return getAccBalance(); 
+			return 0; 
 			
 		}
 		this.setAccBalance(this.getAccBalance()-amount);
-		return getAccBalance(); 
+		return amount; 
 
 			}
 	public double deposit(double amount) {
 		this.setAccBalance(this.getAccBalance()+amount);
-		return getAccBalance(); 
+		return amount; 
 
 		
 	}
