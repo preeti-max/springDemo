@@ -15,7 +15,7 @@ public class WithdrawalEvent extends ApplicationEvent {
 	
 
 	public String toString() {
-		return "Withdrawl event: " + "\n" + " Acc Balance =" + this.balance
+		return " Acc Balance =" + this.balance
 				+ "\n"+"Timestamp: "+new Timestamp(System.currentTimeMillis());
 	}	
 	
