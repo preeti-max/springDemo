@@ -1,0 +1,22 @@
+package com.example.dataaccess.dao;
+
+import java.sql.*;
+import java.util.List;
+import com.example.dataaccess.model.Worker;
+
+public interface WorkerDAO {
+    public int add(Worker worker)
+            throws SQLException;
+
+    public void delete(int workerId)
+            throws SQLException;
+
+    public Worker getWorker(int workerId)
+            throws SQLException;
+
+    public List<Worker> getWorkers()
+            throws SQLException;
+
+    public void update(int worker_id)
+            throws SQLException;
+}
