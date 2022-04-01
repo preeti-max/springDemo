@@ -8,7 +8,7 @@ public interface WorkerDAO {
     public int add(Worker worker)
             throws SQLException;
 
-    public void delete(int workerId)
+    public int delete(int workerId)
             throws SQLException;
 
     public Worker getWorker(int workerId)
@@ -17,6 +17,6 @@ public interface WorkerDAO {
     public List<Worker> getWorkers()
             throws SQLException;
 
-    public void update(int worker_id)
+    public int update(int worker_id,String email)
             throws SQLException;
 }
